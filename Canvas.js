@@ -1,6 +1,5 @@
 // TODO: Pass time since last update to the update function.
 // TODO: Encapsulate all the parameters needed for trees into a config object. There will be more.
-// TODO: UI?
 
 // Uniform random number in [min,max].
 function uniform_random_in_range(min, max) {
@@ -94,23 +93,18 @@ Tree.prototype.draw = function(context) {
 
 // World
 var World = function(size, num_trees) {
+  this.gen = null;
   this.size = size;
   this.trees = new Array();
+} 
 
-  var size_params = { min : 0, max : 50 };
-  var center_params = {
-    min : new Point(0, 0), 
-    max : new Point(size.width, size.height),
-    func : uniform_random_in_range_2d
-  };
-  //var gen = new RandomDiskGenerator(center_params, size_params);
-  var gen = new AvoidDiskGenerator(center_params, size_params);
-
+World.prototype.initialize = function(num_trees) {
+  this.trees = new Array();
   for (var i = 0; i < num_trees; ++i) {
-    var disk = gen.generate(this.trees);
+    var disk = this.gen.generate(this.trees);
     this.trees.push(new Tree(disk.center, disk.size));
   }
-} 
+}
 
 World.prototype.update = function() {
   for (var i = 0; i < this.trees.length; ++i) {
@@ -128,11 +122,25 @@ World.prototype.draw = function(context) {
 var canvas;
 var context;
 var world;
+var timerIntervalID;
 
-function startAnimation() {
-  var size = { width: 800, height: 600 };
-  var refresh = 1000 / 30; // fps
+function createRadioButton(name, text, onClick) {
+  var label = document.createElement("label");
+  var radio = document.createElement("input");
+  radio.type = "radio";
+  radio.name = name;
+  radio.onclick = onClick;
 
+  label.appendChild(radio);
+  label.appendChild(document.createTextNode(text));
+
+  return label;
+}
+
+function initWorld() {
+  var size = { width: 800, height: 500 };
+
+  // Canvas and context
   canvas = document.createElement("canvas"),
   canvas.width = size.width;
   canvas.height = size.height;
@@ -140,13 +148,57 @@ function startAnimation() {
 
   context = canvas.getContext("2d");
 
+  // Options
+  var button = document.createElement("button");
+  button.onclick = function() { pauseButtonClicked(button); }
+  button.textContent = "Pause";
+  document.body.appendChild(button);
+
+  document.body.appendChild(
+      createRadioButton("disk-generator",
+                        "Random",
+                        function() { updateDiskGenerator(RandomDiskGenerator); }));
+                                         
+  document.body.appendChild(
+      createRadioButton("disk-generator",
+                        "Avoid",
+                        function() { updateDiskGenerator(AvoidDiskGenerator); }));
+
   world = new World(size, 400);
-  
-  interval = setInterval(updateAnimation, refresh);
+ 
+  toggleAnimation(); 
+}
+
+function toggleAnimation() {
+  if (timerIntervalID) {
+    clearInterval(timerIntervalID);
+    timerIntervalID = null;
+  } else {
+    var refresh = 1000 / 30; // fps
+    timerIntervalID = setInterval(updateAnimation, refresh);
+  }
+
+  return timerIntervalID != null;
+}
+
+function pauseButtonClicked(button) {
+  var running = toggleAnimation();
+  button.textContent = running ? "Pause" : "Start";
 }
 
 function updateAnimation() {
   context.clearRect(0, 0, canvas.width, canvas.height);
   world.update();
   world.draw(context);
+}
+
+function updateDiskGenerator(generator) {
+  var size_params = { min : 0, max : 50 };
+  var center_params = {
+    min : new Point(0, 0), 
+    max : new Point(canvas.width, canvas.height),
+    func : uniform_random_in_range_2d
+  };
+  world.gen = new generator(center_params, size_params);
+  world.initialize(400);
 }

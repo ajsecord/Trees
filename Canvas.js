@@ -99,11 +99,7 @@ var World = function(size, num_trees) {
 } 
 
 World.prototype.initialize = function(num_trees) {
-  this.trees = new Array();
-  for (var i = 0; i < num_trees; ++i) {
-    var disk = this.gen.generate(this.trees);
-    this.trees.push(new Tree(disk.center, disk.size));
-  }
+  this.create_foest(num_trees);
 }
 
 World.prototype.update = function() {
@@ -115,6 +111,14 @@ World.prototype.update = function() {
 World.prototype.draw = function(context) {
   for (var i = 0; i < this.trees.length; ++i) {
     this.trees[i].draw(context);
+  }
+}
+
+World.prototype.create_forest = function(num_trees) {
+  this.trees = new Array();
+  for (var i = 0; i < num_trees; ++i) {
+    var disk = this.gen.generate(this.trees);
+    this.trees.push(new Tree(disk.center, disk.size));
   }
 }
 
@@ -140,6 +144,8 @@ function createRadioButton(name, text, onClick) {
 function initWorld() {
   var size = { width: 800, height: 500 };
 
+  world = new World(size, 400);
+
   // Canvas and context
   canvas = document.createElement("canvas"),
   canvas.width = size.width;
@@ -149,22 +155,39 @@ function initWorld() {
   context = canvas.getContext("2d");
 
   // Options
+  var ui = document.createElement("p");
+
+  // Pause button
   var button = document.createElement("button");
   button.onclick = function() { pauseButtonClicked(button); }
   button.textContent = "Pause";
-  document.body.appendChild(button);
+  ui.appendChild(button);
+  ui.appendChild(document.createElement("br"));
 
-  document.body.appendChild(
+  // Number of trees
+  var num_trees = document.createElement("input");
+  num_trees.type = "range";
+  num_trees.min = 0;
+  num_trees.max = 1000;
+  num_trees.value = 400;
+  num_trees.oninput = function() { world.create_forest(this.value); };
+  ui.appendChild(num_trees);
+  ui.appendChild(document.createElement("br"));
+
+  // Disk generators
+  ui.appendChild(
       createRadioButton("disk-generator",
                         "Random",
                         function() { updateDiskGenerator(RandomDiskGenerator); }));
                                          
-  document.body.appendChild(
+  ui.appendChild(
       createRadioButton("disk-generator",
                         "Avoid",
                         function() { updateDiskGenerator(AvoidDiskGenerator); }));
+  ui.appendChild(document.createElement("br"));
 
-  world = new World(size, 400);
+  document.body.appendChild(ui);
+
  
   toggleAnimation(); 
 }

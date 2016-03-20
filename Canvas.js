@@ -95,11 +95,11 @@ Tree.prototype.draw = function(context) {
 var World = function(size, num_trees) {
   this.gen = null;
   this.size = size;
-  this.trees = new Array();
+  this.trees = new Array(num_trees);
 } 
 
 World.prototype.initialize = function(num_trees) {
-  this.create_foest(num_trees);
+  this.create_forest(num_trees);
 }
 
 World.prototype.update = function() {
@@ -128,11 +128,12 @@ var context;
 var world;
 var timerIntervalID;
 
-function createRadioButton(name, text, onClick) {
+function createRadioButton(name, text, selected, onClick) {
   var label = document.createElement("label");
   var radio = document.createElement("input");
   radio.type = "radio";
   radio.name = name;
+  radio.checked = selected;
   radio.onclick = onClick;
 
   label.appendChild(radio);
@@ -178,16 +179,18 @@ function initWorld() {
   ui.appendChild(
       createRadioButton("disk-generator",
                         "Random",
+                        false,
                         function() { updateDiskGenerator(RandomDiskGenerator); }));
                                          
   ui.appendChild(
       createRadioButton("disk-generator",
                         "Avoid",
+                        true,
                         function() { updateDiskGenerator(AvoidDiskGenerator); }));
+  updateDiskGenerator(AvoidDiskGenerator);
   ui.appendChild(document.createElement("br"));
 
   document.body.appendChild(ui);
-
  
   toggleAnimation(); 
 }
@@ -223,5 +226,5 @@ function updateDiskGenerator(generator) {
     func : uniform_random_in_range_2d
   };
   world.gen = new generator(center_params, size_params);
-  world.initialize(400);
+  world.initialize(world.trees.length);
 }

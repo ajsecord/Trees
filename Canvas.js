@@ -20,10 +20,33 @@ function random_variate(params) {
   return func(min, max);
 }
 
-// Do two disks overlap?
+// Return true if two disks overlap.
 function disk_overlap(center1, size1, center2, size2) {
   var d = Math.hypot(center1.x - center2.x, center1.y - center2.y);
-  return d < (size1 + size2) / 2;
+  return d - (size1 + size2) / 2;
+}
+
+// Return a probability to accept an overlap between two disks.
+function soft_overlap(center1, size1, center2, size2) {
+  // Normalize so the first disk is at (0,0) with a radius of 1.
+  // Technically, transform by M = ST where S = (1/R1) * I and 
+  // T = -C1.
+  var x = center2.x / size1 - center1.x / size1;
+  var y = center2.y / size1 - center1.y / size1;
+
+  // 'd' is the distance between the disk centers.
+  // 'r' is the (normalized) radius of the second disk.
+  var d = Math.hypot(x, y);
+  var r = size2 / size1;
+  
+  // Probability has the following properties:
+  //  * P(d = 0) = 0
+  //  * P(d > 1 + r) = 1
+  //  * P(r constant) = some increasing function of d.
+  // Lots of models have these properties, so we'll pick a simple linear one.
+  // (Well, linear in d.)
+  var P = Math.min(d / (1 + r), 1);
+  return P;
 }
 
 // Random disk generator.
@@ -54,12 +77,42 @@ AvoidDiskGenerator.prototype.generate = function(disks) {
 
     overlap = false; 
     for (var i = 0; i < disks.length; ++i) {
-      if (disk_overlap(center, size, disks[i].center, disks[i].size)) {
+      if (disk_overlap(center, size, disks[i].center, disks[i].size) < 0) {
         overlap = true;
         break;
       }
     } 
   } while(overlap);
+  
+  return { size : size, center : center };
+}
+
+// Soft disk generator
+var SoftDiskGenerator = function(center_params, size_params) {
+  this.center_params = center_params;
+  this.size_params = size_params;
+}
+
+SoftDiskGenerator.prototype.generate = function(disks) {
+  var size;
+  var center;
+  var overlap;
+  do {
+    size = random_variate(this.size_params);
+    center = random_variate(this.center_params);
+
+    var p = 1;
+    for (var i = 0; i < disks.length; ++i) {
+      p *= soft_overlap(center, size, disks[i].center, disks[i].size);
+    } 
+
+    // Rejection sampling.
+    var test = uniform_random_in_range(0, 1);
+    if (test <= p) {
+      break;
+    }
+
+  } while (true);
   
   return { size : size, center : center };
 }
@@ -187,6 +240,11 @@ function initWorld() {
                         "Avoid",
                         true,
                         function() { updateDiskGenerator(AvoidDiskGenerator); }));
+  ui.appendChild(
+      createRadioButton("disk-generator",
+                        "Soft",
+                        false,
+                        function() { updateDiskGenerator(SoftDiskGenerator); }));
   updateDiskGenerator(AvoidDiskGenerator);
   ui.appendChild(document.createElement("br"));
 

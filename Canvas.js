@@ -222,7 +222,7 @@ function initWorld() {
   var num_trees = document.createElement("input");
   num_trees.type = "range";
   num_trees.min = 0;
-  num_trees.max = 1000;
+  num_trees.max = 2000;
   num_trees.value = 400;
   num_trees.oninput = function() { world.create_forest(this.value); };
   ui.appendChild(num_trees);
@@ -238,14 +238,14 @@ function initWorld() {
   ui.appendChild(
       createRadioButton("disk-generator",
                         "Avoid",
-                        true,
+                        false,
                         function() { updateDiskGenerator(AvoidDiskGenerator); }));
   ui.appendChild(
       createRadioButton("disk-generator",
                         "Soft",
-                        false,
+                        true,
                         function() { updateDiskGenerator(SoftDiskGenerator); }));
-  updateDiskGenerator(AvoidDiskGenerator);
+  updateDiskGenerator(SoftDiskGenerator);
   ui.appendChild(document.createElement("br"));
 
   document.body.appendChild(ui);
@@ -277,7 +277,7 @@ function updateAnimation() {
 }
 
 function updateDiskGenerator(generator) {
-  var size_params = { min : 0, max : 50 };
+  var size_params = { min : 0, max : 100 };
   var center_params = {
     min : new Point(0, 0), 
     max : new Point(canvas.width, canvas.height),

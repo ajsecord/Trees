@@ -7,13 +7,14 @@
 //
 
 import Cocoa
+import Trees
 
 class ViewController: NSViewController {
+    @IBOutlet weak var versionLabel: NSTextField?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.versionLabel!.stringValue = "Library version " + String(cString: trees_get_version())
     }
 
     override var representedObject: AnyObject? {

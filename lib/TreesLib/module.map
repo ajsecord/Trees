@@ -1,0 +1,4 @@
+module Trees [system] {
+    header "trees.h"
+    export *
+}

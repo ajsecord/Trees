@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B1CF8ED1D5FDB8B00A71263 /* libTrees.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B1CF8EC1D5FDB8B00A71263 /* libTrees.a */; };
 		0B5A64A41D5FD5BF005A157E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B5A64A31D5FD5BF005A157E /* AppDelegate.m */; };
 		0B5A64A71D5FD5BF005A157E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B5A64A61D5FD5BF005A157E /* main.m */; };
 		0B5A64AA1D5FD5BF005A157E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B5A64A91D5FD5BF005A157E /* ViewController.m */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B1CF8EC1D5FDB8B00A71263 /* libTrees.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libTrees.a; path = ../lib/build/Debug/libTrees.a; sourceTree = "<group>"; };
 		0B5A649F1D5FD5BF005A157E /* TreesViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TreesViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B5A64A21D5FD5BF005A157E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0B5A64A31D5FD5BF005A157E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -31,17 +33,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B1CF8ED1D5FDB8B00A71263 /* libTrees.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B1CF8EB1D5FDB8B00A71263 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0B1CF8EC1D5FDB8B00A71263 /* libTrees.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		0B5A64961D5FD5BF005A157E = {
 			isa = PBXGroup;
 			children = (
 				0B5A64A11D5FD5BF005A157E /* TreesViewer */,
 				0B5A64A01D5FD5BF005A157E /* Products */,
+				0B1CF8EB1D5FDB8B00A71263 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -206,6 +218,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/../lib/TreesLib";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -247,6 +260,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/../lib/TreesLib";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
@@ -296,6 +310,7 @@
 				0B5A64B51D5FD5BF005A157E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

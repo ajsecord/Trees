@@ -8,12 +8,17 @@
 
 #import "ViewController.h"
 
+#include "trees_version.h"
+
+@interface ViewController ()
+@property(nonatomic) IBOutlet NSTextField *versionLabel;
+@end
+
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    // Do any additional setup after loading the view.
+    [self updateVersionLabel];
 }
 
 
@@ -23,5 +28,12 @@
     // Update the view, if already loaded.
 }
 
+#pragma mark Private
+
+- (void)updateVersionLabel {
+    NSString *label = [NSString stringWithFormat:@"Library version %@",
+                          [NSString stringWithUTF8String:trees_get_version()]];
+    self.versionLabel.stringValue = label;
+}
 
 @end

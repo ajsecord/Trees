@@ -7,97 +7,70 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0B1CF8ED1D5FDB8B00A71263 /* libTrees.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B1CF8EC1D5FDB8B00A71263 /* libTrees.a */; };
-		0B5A64A41D5FD5BF005A157E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B5A64A31D5FD5BF005A157E /* AppDelegate.m */; };
-		0B5A64A71D5FD5BF005A157E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B5A64A61D5FD5BF005A157E /* main.m */; };
-		0B5A64AA1D5FD5BF005A157E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B5A64A91D5FD5BF005A157E /* ViewController.m */; };
-		0B5A64AC1D5FD5BF005A157E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B5A64AB1D5FD5BF005A157E /* Assets.xcassets */; };
-		0B5A64AF1D5FD5BF005A157E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B5A64AD1D5FD5BF005A157E /* Main.storyboard */; };
+		0BFF4FB51D5FE26800A8E11A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFF4FB41D5FE26800A8E11A /* AppDelegate.swift */; };
+		0BFF4FB71D5FE26800A8E11A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFF4FB61D5FE26800A8E11A /* ViewController.swift */; };
+		0BFF4FB91D5FE26800A8E11A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BFF4FB81D5FE26800A8E11A /* Assets.xcassets */; };
+		0BFF4FBC1D5FE26900A8E11A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BFF4FBA1D5FE26900A8E11A /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0B1CF8EC1D5FDB8B00A71263 /* libTrees.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libTrees.a; path = ../lib/build/Debug/libTrees.a; sourceTree = "<group>"; };
-		0B5A649F1D5FD5BF005A157E /* TreesViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TreesViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		0B5A64A21D5FD5BF005A157E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		0B5A64A31D5FD5BF005A157E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		0B5A64A61D5FD5BF005A157E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		0B5A64A81D5FD5BF005A157E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		0B5A64A91D5FD5BF005A157E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		0B5A64AB1D5FD5BF005A157E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		0B5A64AE1D5FD5BF005A157E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		0B5A64B01D5FD5BF005A157E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0BFF4FB11D5FE26800A8E11A /* TreesViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TreesViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0BFF4FB41D5FE26800A8E11A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0BFF4FB61D5FE26800A8E11A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0BFF4FB81D5FE26800A8E11A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0BFF4FBB1D5FE26900A8E11A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0BFF4FBD1D5FE26900A8E11A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		0B5A649C1D5FD5BF005A157E /* Frameworks */ = {
+		0BFF4FAE1D5FE26800A8E11A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B1CF8ED1D5FDB8B00A71263 /* libTrees.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0B1CF8EB1D5FDB8B00A71263 /* Frameworks */ = {
+		0BFF4FA81D5FE26800A8E11A = {
 			isa = PBXGroup;
 			children = (
-				0B1CF8EC1D5FDB8B00A71263 /* libTrees.a */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		0B5A64961D5FD5BF005A157E = {
-			isa = PBXGroup;
-			children = (
-				0B5A64A11D5FD5BF005A157E /* TreesViewer */,
-				0B5A64A01D5FD5BF005A157E /* Products */,
-				0B1CF8EB1D5FDB8B00A71263 /* Frameworks */,
+				0BFF4FB31D5FE26800A8E11A /* TreesViewer */,
+				0BFF4FB21D5FE26800A8E11A /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		0B5A64A01D5FD5BF005A157E /* Products */ = {
+		0BFF4FB21D5FE26800A8E11A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0B5A649F1D5FD5BF005A157E /* TreesViewer.app */,
+				0BFF4FB11D5FE26800A8E11A /* TreesViewer.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		0B5A64A11D5FD5BF005A157E /* TreesViewer */ = {
+		0BFF4FB31D5FE26800A8E11A /* TreesViewer */ = {
 			isa = PBXGroup;
 			children = (
-				0B5A64A21D5FD5BF005A157E /* AppDelegate.h */,
-				0B5A64A31D5FD5BF005A157E /* AppDelegate.m */,
-				0B5A64A81D5FD5BF005A157E /* ViewController.h */,
-				0B5A64A91D5FD5BF005A157E /* ViewController.m */,
-				0B5A64AB1D5FD5BF005A157E /* Assets.xcassets */,
-				0B5A64AD1D5FD5BF005A157E /* Main.storyboard */,
-				0B5A64B01D5FD5BF005A157E /* Info.plist */,
-				0B5A64A51D5FD5BF005A157E /* Supporting Files */,
+				0BFF4FB41D5FE26800A8E11A /* AppDelegate.swift */,
+				0BFF4FB61D5FE26800A8E11A /* ViewController.swift */,
+				0BFF4FB81D5FE26800A8E11A /* Assets.xcassets */,
+				0BFF4FBA1D5FE26900A8E11A /* Main.storyboard */,
+				0BFF4FBD1D5FE26900A8E11A /* Info.plist */,
 			);
 			path = TreesViewer;
-			sourceTree = "<group>";
-		};
-		0B5A64A51D5FD5BF005A157E /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				0B5A64A61D5FD5BF005A157E /* main.m */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0B5A649E1D5FD5BF005A157E /* TreesViewer */ = {
+		0BFF4FB01D5FE26800A8E11A /* TreesViewer */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0B5A64B31D5FD5BF005A157E /* Build configuration list for PBXNativeTarget "TreesViewer" */;
+			buildConfigurationList = 0BFF4FC01D5FE26900A8E11A /* Build configuration list for PBXNativeTarget "TreesViewer" */;
 			buildPhases = (
-				0B5A649B1D5FD5BF005A157E /* Sources */,
-				0B5A649C1D5FD5BF005A157E /* Frameworks */,
-				0B5A649D1D5FD5BF005A157E /* Resources */,
+				0BFF4FAD1D5FE26800A8E11A /* Sources */,
+				0BFF4FAE1D5FE26800A8E11A /* Frameworks */,
+				0BFF4FAF1D5FE26800A8E11A /* Resources */,
 			);
 			buildRules = (
 			);
@@ -105,25 +78,26 @@
 			);
 			name = TreesViewer;
 			productName = TreesViewer;
-			productReference = 0B5A649F1D5FD5BF005A157E /* TreesViewer.app */;
+			productReference = 0BFF4FB11D5FE26800A8E11A /* TreesViewer.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		0B5A64971D5FD5BF005A157E /* Project object */ = {
+		0BFF4FA91D5FE26800A8E11A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0800;
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Adrian Secord";
 				TargetAttributes = {
-					0B5A649E1D5FD5BF005A157E = {
+					0BFF4FB01D5FE26800A8E11A = {
 						CreatedOnToolsVersion = 8.0;
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
-			buildConfigurationList = 0B5A649A1D5FD5BF005A157E /* Build configuration list for PBXProject "TreesViewer" */;
+			buildConfigurationList = 0BFF4FAC1D5FE26800A8E11A /* Build configuration list for PBXProject "TreesViewer" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -131,46 +105,45 @@
 				en,
 				Base,
 			);
-			mainGroup = 0B5A64961D5FD5BF005A157E;
-			productRefGroup = 0B5A64A01D5FD5BF005A157E /* Products */;
+			mainGroup = 0BFF4FA81D5FE26800A8E11A;
+			productRefGroup = 0BFF4FB21D5FE26800A8E11A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0B5A649E1D5FD5BF005A157E /* TreesViewer */,
+				0BFF4FB01D5FE26800A8E11A /* TreesViewer */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		0B5A649D1D5FD5BF005A157E /* Resources */ = {
+		0BFF4FAF1D5FE26800A8E11A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B5A64AC1D5FD5BF005A157E /* Assets.xcassets in Resources */,
-				0B5A64AF1D5FD5BF005A157E /* Main.storyboard in Resources */,
+				0BFF4FB91D5FE26800A8E11A /* Assets.xcassets in Resources */,
+				0BFF4FBC1D5FE26900A8E11A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		0B5A649B1D5FD5BF005A157E /* Sources */ = {
+		0BFF4FAD1D5FE26800A8E11A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B5A64AA1D5FD5BF005A157E /* ViewController.m in Sources */,
-				0B5A64A71D5FD5BF005A157E /* main.m in Sources */,
-				0B5A64A41D5FD5BF005A157E /* AppDelegate.m in Sources */,
+				0BFF4FB71D5FE26800A8E11A /* ViewController.swift in Sources */,
+				0BFF4FB51D5FE26800A8E11A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		0B5A64AD1D5FD5BF005A157E /* Main.storyboard */ = {
+		0BFF4FBA1D5FE26900A8E11A /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				0B5A64AE1D5FD5BF005A157E /* Base */,
+				0BFF4FBB1D5FE26900A8E11A /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -178,7 +151,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		0B5A64B11D5FD5BF005A157E /* Debug */ = {
+		0BFF4FBE1D5FE26900A8E11A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -218,15 +191,16 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = "$(SRCROOT)/../lib/TreesLib";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
-		0B5A64B21D5FD5BF005A157E /* Release */ = {
+		0BFF4FBF1D5FE26900A8E11A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -260,14 +234,14 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = "$(SRCROOT)/../lib/TreesLib";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 			};
 			name = Release;
 		};
-		0B5A64B41D5FD5BF005A157E /* Debug */ = {
+		0BFF4FC11D5FE26900A8E11A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -276,10 +250,11 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.adriansecord.TreesViewer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
-		0B5A64B51D5FD5BF005A157E /* Release */ = {
+		0BFF4FC21D5FE26900A8E11A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -288,31 +263,31 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.adriansecord.TreesViewer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0B5A649A1D5FD5BF005A157E /* Build configuration list for PBXProject "TreesViewer" */ = {
+		0BFF4FAC1D5FE26800A8E11A /* Build configuration list for PBXProject "TreesViewer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0B5A64B11D5FD5BF005A157E /* Debug */,
-				0B5A64B21D5FD5BF005A157E /* Release */,
+				0BFF4FBE1D5FE26900A8E11A /* Debug */,
+				0BFF4FBF1D5FE26900A8E11A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0B5A64B31D5FD5BF005A157E /* Build configuration list for PBXNativeTarget "TreesViewer" */ = {
+		0BFF4FC01D5FE26900A8E11A /* Build configuration list for PBXNativeTarget "TreesViewer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0B5A64B41D5FD5BF005A157E /* Debug */,
-				0B5A64B51D5FD5BF005A157E /* Release */,
+				0BFF4FC11D5FE26900A8E11A /* Debug */,
+				0BFF4FC21D5FE26900A8E11A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 0B5A64971D5FD5BF005A157E /* Project object */;
+	rootObject = 0BFF4FA91D5FE26800A8E11A /* Project object */;
 }

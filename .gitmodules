@@ -1,3 +1,6 @@
 [submodule "external/cmocka"]
 	path = external/cmocka
 	url = git://git.cryptomilk.org/projects/cmocka.git
+[submodule "external/kvad"]
+	path = external/kvad
+	url = git@github.com:ajsecord/kvad.git

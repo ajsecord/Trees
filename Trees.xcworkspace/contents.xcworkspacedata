@@ -7,4 +7,7 @@
    <FileRef
       location = "group:lib/TreesLib.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:external/kvad/kvad.xcodeproj">
+   </FileRef>
 </Workspace>

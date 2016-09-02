@@ -10,6 +10,7 @@
 		0B1CF8E81D5FDA0C00A71263 /* trees_version.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B1CF8E51D5FDA0C00A71263 /* trees_version.h */; };
 		0B1CF8E91D5FDA0C00A71263 /* trees_environment.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B1CF8E61D5FDA0C00A71263 /* trees_environment.h */; };
 		0B1CF8EA1D5FDA0C00A71263 /* trees_version.c in Sources */ = {isa = PBXBuildFile; fileRef = 0B1CF8E71D5FDA0C00A71263 /* trees_version.c */; };
+		0B2EE6A81D61F30D005763C5 /* libKvadOSXLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B2EE6A71D61F30D005763C5 /* libKvadOSXLib.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -17,6 +18,7 @@
 		0B1CF8E51D5FDA0C00A71263 /* trees_version.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = trees_version.h; sourceTree = "<group>"; };
 		0B1CF8E61D5FDA0C00A71263 /* trees_environment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = trees_environment.h; sourceTree = "<group>"; };
 		0B1CF8E71D5FDA0C00A71263 /* trees_version.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = trees_version.c; sourceTree = "<group>"; };
+		0B2EE6A71D61F30D005763C5 /* libKvadOSXLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libKvadOSXLib.a; path = ../external/kvad/build/Debug/libKvadOSXLib.a; sourceTree = "<group>"; };
 		0BAAE61A1D5FE6AC00168D5E /* module.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.map; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -25,6 +27,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B2EE6A81D61F30D005763C5 /* libKvadOSXLib.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -36,6 +39,7 @@
 			children = (
 				0B1CF8E41D5FD9FC00A71263 /* TreesLib */,
 				0B11DA701D5FD50C0081BCE1 /* Products */,
+				0B2EE6A61D61F30D005763C5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,6 +60,14 @@
 				0B1CF8E51D5FDA0C00A71263 /* trees_version.h */,
 			);
 			path = TreesLib;
+			sourceTree = "<group>";
+		};
+		0B2EE6A61D61F30D005763C5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0B2EE6A71D61F30D005763C5 /* libKvadOSXLib.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
